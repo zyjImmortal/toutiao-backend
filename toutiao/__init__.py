@@ -103,7 +103,7 @@ def create_app(config, enable_config_file=False):
     # app.register_error_handler(RedisError, handle_redis_error)
     # app.register_error_handler(SQLAlchemyError, handler_mysql_error)
 
-    # 添加请求钩子
+    # 添加请求钩子,还有一种方式@app.before_reqeust
     from utils.middlewares import jwt_authentication
     app.before_request(jwt_authentication)
 

@@ -52,6 +52,7 @@ class AuthorizationResource(Resource):
         # 颁发JWT
         secret = current_app.config['JWT_SECRET']
         # 生成调用token， refresh_token
+        # UTC的标准时间， 加一个时间增量，通过timedelta
         expiry = datetime.utcnow() + timedelta(hours=current_app.config['JWT_EXPIRY_HOURS'])
 
         token = generate_jwt({'user_id': user_id}, expiry, secret)

@@ -10,7 +10,7 @@ from utils.jwt_util import verify_jwt
 
 
 def jwt_authentication():
-    # 获取请求头中的token
+    # 获取请求头中的token，将请求的token信息放到g对象中，在业务逻辑中进行使用
     # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjoicGF5bG9hZCJ9.4twF
     # t5NiznN84AWoo1d7KO1T_yoc0Z6XOpOVswacPZg
 
